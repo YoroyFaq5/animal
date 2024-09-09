@@ -1,8 +1,8 @@
 class Animal:
+    alive = True
+    fed = False
     def __init__(self, name):
         self.name = name
-        self.alive = True
-        self.fed = False
 
     def eat(self, food):
         if food.edible:
@@ -13,9 +13,9 @@ class Animal:
             self.alive = False
 
 class Plant:
+    edible = False
     def __init__(self, name):
         self.name = name
-        self.edible = False
 
 class Mammal(Animal):
     pass
@@ -27,9 +27,7 @@ class Flower(Plant):
     pass
 
 class Fruit(Plant):
-    def __init__(self, name):
-        super().__init__(name)
-        self.edible = True
+    edible = True
 
 a1 = Predator('Волк с Уолл-Стрит')
 a2 = Mammal('Хатико')
